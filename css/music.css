@@ -1,0 +1,391 @@
+body,
+div,
+p,
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+*{
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+a {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-user-select: none;
+	-moz-user-focus: none;
+	-moz-user-select: none;
+}
+
+/* 基本信息 + 图片 开始 */
+.music {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #42474c;
+	overflow: hidden;
+}
+
+.bacImg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: cover;
+	-webkit-filter: blur(40px);
+	filter: blur(40px);
+	opacity: 0.6;
+	background-image: ;
+}
+
+.mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .1);
+}
+
+.music-info {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+
+.music-name {
+	top: 6%;
+}
+
+.music-name span {
+	display: inline-block;
+	white-space: nowrap;
+	width: 78%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.music-author {
+	font-size: 13px;
+	top: 12%;
+}
+
+.music-img {
+	position: absolute;
+	top: 20%;
+	width: 100%;
+}
+
+.music-img .img-author {
+	position: absolute;
+	left: 10%;
+	width: calc(80%);
+	border: 6px solid rgba(55, 55, 55, .2);
+	border-radius: 50%;
+	box-sizing: border-box;
+	animation: rotate 30s infinite linear;
+	/* animation: rotate 30s infinite linear!important; */
+	animation-play-state: paused;
+}
+
+.imgRotate {
+	animation: rotate 30s infinite linear!important;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+/* 基本信息 + 图片 结束 */
+
+/* 歌词 开始 */
+.music-lyric {
+	display: none;
+	position: absolute;
+	top: 20%;
+	width: 100%;
+}
+
+.music-lyric .lyric {
+	position: absolute;
+	left: 10%;
+	width: calc(80%);
+	box-sizing: border-box;
+	text-align: center;
+	height: 350px;
+	overflow-y: scroll;
+}
+	/* 31C27C */
+.music-lyric .lyric p {
+	color: #D3CFCD;
+	margin-bottom: 15px;
+}
+
+/* 歌词 结束 */
+
+/* 进度条 开始 */
+.music-progress {
+	position: absolute;
+	bottom: 20%;
+	width: 100%;
+}
+
+.music-progress p {
+	float: left;
+}
+
+
+.music-progress .time {
+	width: 60px;
+	font-size: 14px;
+	line-height: 18px;
+	color: #fff;
+	text-align: center;
+}
+
+.music-progress .progress {
+	position: relative;
+	margin: 8px 0;
+	width: calc(100% - 120px);
+	height: 2px;
+	background-color: #bbb;
+}
+
+.music-progress .progress &:hover {
+	cursor: pointer;
+}
+
+.current-progress {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: 0;
+	height: 2px;
+	background-color: #fff;
+}
+
+.current-progress .progress-dot {
+	top: -4px;
+	right: -4px;
+	width: 12px;
+	height: 12px;
+	background-position: 0 -170px;
+}
+/* 进度条 结束 */
+
+/* 底部按钮 开始 */
+.icon-img {
+	position: absolute;
+	cursor: pointer;
+	background-image: url("../images/player.png");
+}
+
+.music-controls {
+	position: absolute;
+	bottom: 12%;
+	width: 100%;
+}
+
+.music-controls .ctl-mode-list {	/* 列表 */
+	top: 2px;
+	left: 6.7%;
+	width: 24px;
+  height: 24px;
+	position: absolute;
+	cursor: pointer;
+	background-image: url(../images/music_btn_multi.png);
+	background-size: cover;
+}
+
+.ctl-mode-single {	/* 单曲 */
+	top: 2px;
+	left: 6.7%;
+	width: 24px;
+  height: 24px;
+	position: absolute;
+	cursor: pointer;
+	background-image: url(../images/music_btn_listsingle.png);
+	background-size: cover;
+}
+
+.ctl-mode-random {	/* 随机 */
+	top: 2px;
+	left: 6.7%;
+	width: 24px;
+  height: 24px;
+	position: absolute;
+	cursor: pointer;
+	background-image: url(../images/music_btn_random.png);
+	background-size: cover;
+}
+
+.ctl-play {	/* 播放 */
+	top: -8px;
+	left: 43.9%;
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	cursor: pointer;
+	background-image: url(../images/music_btn_play.png);
+	background-size: cover;
+}
+
+.ctl-prev {	/* 上一首 */
+	top: -8px;
+	left: 23.8%;
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	cursor: pointer;
+	background-image: url(../images/music_btn_preview.png);
+	background-size: cover;
+}
+
+.ctl-pause {	/* 暂停 */
+	background-image: url(../images/music_btn_pause.png);
+}
+
+.ctl-next {	/* 下一首 */
+	top: -8px;
+	left: 64%;
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	cursor: pointer;
+	background-image: url(../images/music_btn_next.png);
+	background-size: cover;
+}
+
+.ctl-list {	/* 列表 */
+	top: 0px;
+  left: 85%;
+  width: 30px;
+  height: 24px;
+	position: absolute;
+	cursor: pointer;
+	background-image: url(../images/music_btn_list.png);
+	background-size: cover;
+}
+/* 底部按钮 结束 */
+
+/* 音乐列表 开始 */
+.music-list {
+	position: absolute;
+	bottom: 0;
+	transition: height 0.1s linear;
+	font-size: 14px;
+	color: #555;
+	background-color: #fff;
+	overflow: auto;
+	height: 0;
+	z-index: 999;
+}
+
+.music-list ul {
+	list-style: none;
+	position: relative;
+}
+
+.music-list li {
+	width: 100%;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #eee;
+	box-sizing: border-box;
+}
+
+.music-listt li &:hover {
+	cursor: pointer;
+}
+
+.list-item .singer {
+	padding-left: 10px;
+	display: inline-block;
+	white-space: nowrap;
+	width: 95%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list-item .singer span {
+	background-color: #ffffff;
+}
+
+.list-item .singer-name {
+	font-size: 12px;
+	color: #999;
+}
+
+li.play-on {
+	color: red;
+}
+
+li.play-on .singer-name {
+	color: red;
+}
+
+&::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+.list-mask {
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	background-color: rgba(0, 0, 0, .6);
+}
+/* 音乐列表 结束 */
+
+.play-status {
+	display: none;
+}
+
+.hidden {
+	display: none;
+}
+
+/* 提示 弹框 开始 */
+.hide-notify {
+	display: none;
+}
+
+.notify-panel {
+	flex-direction: row;
+	position: absolute;
+	top: 30%;
+	display: flex;
+	justify-content: center;
+	left: 15%;
+	right: 15%;
+	width: auto;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 18px;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+.notify-text {
+	font-size: 20px;
+	padding: 13px 0;
+}
+
+/* 提示 弹框 结束 */

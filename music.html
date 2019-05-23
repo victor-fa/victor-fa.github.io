@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<link rel="stylesheet" href="css/music.css">
+	</head>
+
+	<body>
+		<div class="music">
+			<!-- 背景图 -->
+			<div class="bacImg"></div>
+			<div class="mask"></div>
+			<!-- 音乐名 -->
+			<div class="music-name music-info"><span></span></div>
+			<!-- 作者名 -->
+			<div class="music-author music-info">— <span></span> —</div>
+			<!-- 音乐图 -->
+			<div class="music-img">
+				<img class="img-author" src="">
+			</div>
+			<!--歌词-->
+			<div class="music-lyric">
+				<div class="lyric">
+				</div>
+			</div>
+			<!-- 进度条 -->
+			<div class="music-progress">
+				<p class="current-time time">00:00</p>
+				<p class="progress"><span class="current-progress"><i class="progress-dot icon-img"></i></span></p>
+				<p class="all-time time">00:00</p>
+			</div>
+			<!-- 控制面板 -->
+			<div class="music-controls">
+				<a href="javascript:;" id="btnMode" class="ctl-mode-list" data-value="列表循环" title="列表循环"><span></span></a>
+				<a href="javascript:;" class="prevNext ctl-prev" data-value="prev" title="上一首"><span></span></a>
+				<a href="javascript:;" id="btnPlay" class="ctl-play" title="播放"><span></span></a>
+				<a href="javascript:;" class="prevNext ctl-next" data-value="next" title="下一首"><span></span></a>
+				<a href="javascript:;" class="ctl-list" data-value="list" title="歌曲列表"><span></span></a>
+			</div>
+			<!-- 音乐列表 -->
+			<div class="list-mask"></div>
+			<div class="music-list" id="musicList">
+				<ul id="music-list-ul">
+				</ul>
+			</div>
+		</div>
+		
+		<!-- 提示 开始 -->
+		<div class="hide-notify">
+			<div class="notify-panel">
+				<span class="notify-text"></span>
+			</div>
+		</div>
+		<!-- 提示 结束 -->
+	</body>
+	<script src="js/player.js"></script>
+	<script>
+		var player = new Player({});	// QQ音乐全局变量
+	</script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/musicApi.js"></script>
+</html>
