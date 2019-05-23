@@ -1,8 +1,6 @@
 (function($) {
 	'use strict';
 	
-	var u = navigator.userAgent;
-	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端
 	var curLyricArr = '';	// 歌词数组
 	var songMidArr = [];	// 获取所有mid
 	var songMidArrAll = [];	// 获取所有mid
@@ -10,7 +8,6 @@
 	var $progress = $('.progress');
 	var timer = null;	// 定时器
 	var playSort = 'list';	// 播放顺序 三种
-	var isListAndSortChange = false;
 	var isMusicVip = false;	// 超级mvp下，一首歌都不能播
 	
 	loadData();
@@ -18,9 +15,7 @@
 	// 初始化开始播放
 	function btnPlayClick() {
 		setTimeout(() => {
-			isListAndSortChange ? player.play() : player.play(songMidArr, { target: 'auto', filter: true, loop: true });
-		}, 10)
-		setTimeout(function() {
+			player.play(songMidArr, { target: 'auto', filter: true, loop: true });
 			let imageUrl = '';
 			if (player.data.song.album.mid !== '') {
 				imageUrl = 'https://y.gtimg.cn/music/photo_new/T002R300x300M000' + player.data.song.album.mid+ '.jpg?max_age=2592000';
@@ -36,7 +31,7 @@
 			$('.img-author').attr('src', imageUrl);	// 图片
 			$('.bacImg').css('background-image', 'url(' + imageUrl + ')');	// 背景图
 			$(document).attr('title', player.data.song.title);
-		}, 1000)
+		})
 		// 初始化所有当前时间、总时间、进度条的变化设置
 		let allTime, currentTime, allProgressWidth;
 		timer = setInterval(() => {
@@ -92,7 +87,12 @@
 	var songAlbumArr = [];
 	function loadData() {
 		player.playReady();
-		const url = 'https://victor-fa.github.io/music/music-list.json';
+		let url = '';
+		if (getQueryString('singer') === '') {
+			url = 'https://victor-fa.github.io/music/music-list.json';
+		} else if (getQueryString('singer') === 'lijun') {
+			url = 'https://victor-fa.github.io/music/music-list-lijun.json';
+		}
 		$.ajax({
 			url: url,
 			type: 'get',
@@ -122,7 +122,7 @@
 						// console.log(songs[i].singer[0].name + ' ———— 付费的');
 					}
 				}
-				setTimeout(function() { btnPlayClick(); }, 500)
+				setTimeout(function() { btnPlayClick(); })
 				
 				$('#music-list-ul').html('');	// 清空
 				songNameArr.forEach((music, index) => {
