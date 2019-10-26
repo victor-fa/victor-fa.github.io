@@ -30,7 +30,7 @@
 			$('.music-author span').text(tempSingerList);
 			$('.img-author').attr('src', imageUrl);	// 图片
 			$('.bacImg').css('background-image', 'url(' + imageUrl + ')');	// 背景图
-			$(document).attr('title', player.data.song.title);
+			$(document).attr('title', 'stormfa | ' + player.data.song.title);
 		})
 		// 初始化所有当前时间、总时间、进度条的变化设置
 		let allTime, currentTime, allProgressWidth;
@@ -57,7 +57,7 @@
 			$('.music-author span').text(tempSingerList);
 			$('.img-author').attr('src', imageUrl);
 			$('.bacImg').css('background-image', 'url(' + imageUrl + ')');	// 背景图
-			$(document).attr('title', player.__.data.song.title);
+			$(document).attr('title', 'stormfa | ' + player.__.data.song.title);
 			if (player.__.data.state === 'playing') {	// 播放切换暂停样式
 				$('#btnPlay').addClass('ctl-pause');
 				$('.img-author').addClass('imgRotate');
@@ -255,7 +255,7 @@
 			$('.music-author span').text(tempSingerList);
 			$('.img-author').attr('src', imageUrl);
 			$('.bacImg').css('background-image', 'url(' + imageUrl + ')');	// 背景图
-			$(document).attr('title', player.data.song.title);
+			$(document).attr('title', 'stormfa | ' + player.data.song.title);
     })
     .ontap('.ctl-next', function (e) {	// 下一首
 			console.log(playSort);
@@ -285,7 +285,7 @@
 			$('.music-author span').text(tempSingerList);
 			$('.img-author').attr('src', imageUrl);
 			$('.bacImg').css('background-image', 'url(' + imageUrl + ')');	// 背景图
-			$(document).attr('title', player.data.song.title);
+			$(document).attr('title', 'stormfa | ' + player.data.song.title);
     })
     .ontap('.ctl-list', function (e) { $('.music-list').css('height', '50%').css('width', '100%'); })	// 获取列表
     .ontap('.mask', function (e) { $('.music-list').css('height', '0'); })
