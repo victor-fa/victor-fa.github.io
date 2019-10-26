@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>版本2.2.2且兼容box2d东游记</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+
+	<body>
+		<div id="game_div"> </div>
+		<!-- 左上角 -->
+		<div class="score-panel">
+			<img src="img/start.png">
+			<span id="scoreCount">X0</span>
+		</div>
+		<!-- 左下角 -->
+		<div class="life-panel">
+			<img src="img/life.png">
+			<span id="lifeCount">X10</span>
+		</div>
+		<!-- 死亡 -->
+		<div class="gameover-panel dead-panel">
+			<span>GameOver</span>
+			<button id="gameoverRestart">Restart</button>
+		</div>
+		<!-- 成功 -->
+		<div class="gameover-panel win-panel">
+			<span>You Win</span>
+			<button id="winRestart">Restart</button>
+		</div>
+	</body>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/phaser.min.js"></script>
+	<script type="text/javascript" src="js/phaser.2.2.2.box2d.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</html>
